@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css">
+    <title>StudyAdda</title>
+</head>
+<body>
+    
+    <!-- ============================= loading container =============================  -->
+
+    <div id="loading-container" class="lobster">
+        <div class="small-font">Welcome to</div>
+        <div class="loading-title">StudyAdda :)</div>
+        <i class="fa-solid fa-spinner"></i>
+    </div>
+
+    <!-- ============================= form section =============================  -->
+    <form id="form">
+        <div class="form-container">
+            
+            <!-- logo  -->
+            <div class="main-logo lobster">
+                <span>S</span>tudy<span>A</span>dda
+            </div>
+            
+            <!-- create account message  -->
+            <div id="form-message">Create Account</div>
+
+            <!-- username input  -->
+            <label for="username-input" id="username-label">Create username:</label>
+            <input type="text" name="username-input" id="username-input" placeholder="Enter name here ...">
+
+            <!-- password input  -->
+            <label for="password-input" id="password-label">Set password:</label>
+            <input type="text" name="password-input" id="password-input" placeholder="Enter password ...">
+
+            <!-- horizontal line  -->
+            <div class="hr"></div>
+
+            <!-- save button  -->
+            <div id="save-button" class="disabled-link">Create 
+                <i class="fa-solid fa-right-to-bracket"></i>
+            </div>
+
+        </div>
+    </form>
+
+    <!-- ============================= header section =============================  -->
+    <header>
+
+        <!-- main logo  -->
+        <div class="main-logo lobster">
+            <span>S</span>tudy<span>A</span>dda
+        </div>
+        
+        <!-- for adding right side icons  -->
+        <div class="header-right">
+            <label for="input-search" id="open-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </label>
+        </div>
+    </header>
+
+    <!-- ============================= main section =============================  -->
+    <main id="main-section">
+        
+        <!-- ============================= videos section =============================  -->
+        <!-- here are videos will show  -->
+        <section id="videos-section"></section>
+
+        <!-- ============================= about section =============================  -->
+        <section id="about-section">
+
+            <!-- about section header to display user name  -->
+            <div id="about-header">
+                <div id="about-username">undefined</div>
+            </div>
+            
+            <!-- here shows the videos which was liked  -->
+            <div id="liked-videos-container">
+
+                <!-- this is heading  -->
+                <div class="about-heading">Liked Videos</div>
+
+                <!-- this is liked videos sub container   -->
+                <div id="liked-videos">
+
+                    <!-- warning if no liked videos found  -->
+                    <div class="about-warning">
+                        You have liked any videos :( 
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- this is delete account button  -->
+            <div id="delete-accounts">Delete Account</div>
+            
+            <!-- ============================= delete account section =============================  -->
+            <div id="delete-account-container">
+
+                <!-- this is to show the delete account pop-up -->
+                <div id="delete-account-message">
+                    <div class="top">
+                        Sure you want to delete the account?
+                    </div>
+                    <div class="bottom">
+
+                        <!-- this is cancel delete button  -->
+                        <div id="cancel-delete">Cancel</div>
+                        <!-- this is delete account confirm button  -->
+                        <div id="account-delete">Delete</div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ============================= search section =============================  -->
+    <div id="search-container">
+
+        <!-- this is the header  -->
+        <div id="search-header">
+
+            <!-- to take user input  -->
+            <input type="text" id="input-search" placeholder="Search here...">
+
+            <!-- to close search button  -->
+            <div id="close-search">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+
+        <!-- this is where searched item shows  -->
+        <div id="searched-item-container"></div>
+    </div>
+
+    <!-- ============================= video player section =============================  -->
+    <section id="video-player-container">
+        
+        <!-- this is controls and playing video section  -->
+        <div id="controls-up-container">
+            <div>
+                <div id="controls-container">
+                    <!-- this is the video being played  -->
+                    <video src="https://dl.dropboxusercontent.com/s/8uzaub5yp4pys7a/HTML%20Basic%20Syntax%20in%20Hindi%20%20%20Urdu.mkv?dl=0" id="video-player"></video>
+        
+                    <!-- video close button  -->
+                    <div id="close-video" class="p-absolute">
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+        
+                    <!-- play/pause and forward backward buttons  -->
+                    <div class="p-absolute" id="prev">
+                        <i class="fa-solid fa-backward-step"></i>
+                    </div>
+                    <div class="p-absolute" id="toggle-play">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="p-absolute" id="next">
+                        <i class="fa-solid fa-forward-step"></i>
+                    </div>
+        
+                    <!-- video timer  -->
+                    <div id="timer" class="p-absolute">00:00/00:00</div>
+        
+                    <!-- video fullscreen  -->
+                    <div class="p-absolute" id="fullscreen-toggle">
+                        <i class="fa-solid fa-expand"></i>
+                    </div>
+        
+                    <!-- video progress  -->
+                    <input type="range" name="video-progress" id="video-progress" class="p-absolute">
+        
+                    <!-- for hiding the controls  -->
+                    <div id="toggle-controls"></div>
+
+                </div>
+            </div>
+        </div>
+        
+        <!-- here video name and type appears  -->
+        <div id="video-details">
+            <div id="video-name">video name</div>
+            <div id="video-creator-name">creator name</div>
+        </div>
+
+        <!-- option for liking the video or download video  -->
+        <div id="videos-options">
+            <div id="like" class="flex">
+                <i class="fa-light fa-thumbs-up"></i>
+                <span>Like</span>
+            </div>
+
+            <a href="#" class="flex" id="download-video">
+                <i class="fa-solid fa-arrow-down-to-square"></i>
+                <span>Downlaod</span>
+            </a>
+
+        </div>
+
+        <!-- other videos suggestion  -->
+        <div id="suggestion-videos-container">
+
+        <!-- channel name and channel icon shows here -->
+            <div id="about-channel">
+                <div>
+                    <img src="test-img.jpg" alt="" id="channel-img">
+                </div>
+                <div id="channel-name">channel name</div>
+            </div>
+
+            <!-- other videos in player section  -->
+            <div class="up-next" id="suggestion-container">Up Next</div>
+        </div>
+    </section>
+
+    <!-- ============================= navbar section =============================  -->
+    <nav id="navbar">
+        <div class="nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </div>
+        <div class="nav-item">
+            <i class="fa-solid fa-rectangle-vertical-history"></i>
+            <span>About</span>
+        </div>
+    </nav>
+
+</body>
+
+<!-- including javascript  -->
+<script src="main.js"></script>
+</html>
+

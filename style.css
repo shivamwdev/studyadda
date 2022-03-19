@@ -1,0 +1,776 @@
+/* importing google font families  */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Lobster&display=swap');
+
+/* universal selector  */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* for changing the color of selected text  */
+::selection{
+    color: var(--color3);    
+    background-color: var(--color5);
+}
+
+/* for hiding the scroll bar from the entire page  */
+::-webkit-scrollbar{
+    display: none;
+}
+
+/* ======================= color variable declaration ======================== */
+:root{
+    --color1: #ecf0f1;
+    --color2: #ff4757;
+    --color3: #5352ed;
+    --color4: #341f97;
+    --color5: #f368e0;
+}
+
+/* ======================= for disabling the elements on click classes ======================== */
+.disabled-link{
+    pointer-events: none;
+    opacity: .5;
+}
+
+/* ======================= font related classes ======================== */
+
+/* fredoka font  */
+.fredoka{
+    font-family: 'Fredoka', sans-serif;
+}
+
+/* lobster font  */
+.lobster{
+    font-family: 'Lobster', cursive;
+}
+
+/* ======================== body container ============================ */
+body{
+    height: 100vh;
+    background-color: var(--color1);
+    font-family: 'Fredoka', sans-serif;
+    user-select: none;
+    outline: none;
+    -webkit-tap-highlight-color:rgba(255,255,255,0);
+}
+
+/* ======================== loading container ============================ */
+#loading-container{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(var(--color2), var(--color2), var(--color3), var(--color4));
+    color: #fff;
+    transition: top .4s ease-in-out;
+}
+
+.small-font{
+    font-size: 1.2rem;
+}
+
+.loading-title{
+    font-size: 2.4rem;
+}
+
+#loading-container .fa-spinner{
+    position: absolute;
+    bottom: 20vh;
+    font-size: 1.8rem;
+    display: inline-block;
+    padding: .1rem;
+    background: linear-gradient(320deg, transparent, var(--color5));
+    color: transparent;
+    -webkit-background-clip: text;
+    animation: ROTATE 2s linear infinite;
+}
+
+@keyframes ROTATE{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* class for hiding the loader  */
+.hide-loader{
+    top: -200vh !important;
+}
+
+/* ======================== FORM section ============================ */
+form{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(339deg, var(--color2), var(--color2), var(--color3), var(--color4));
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: top .4s ease-in-out;
+    z-index: 9;
+}
+
+.form-container{
+    width: 90vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    border-radius: 10px;
+    padding: 1rem .5rem;
+}
+
+.form-container .main-logo{
+    font-size: 1.9rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0px 0px 1px var(--color4),
+    0px 0px 1px var(--color4),
+    0px 2px 5px var(--color4);
+    padding: 1rem 0;
+}
+
+.form-container .main-logo span{
+    font-size: 2.2rem;
+}
+
+#form-message{
+    color: var(--color2);
+    text-align: center;
+    text-decoration: underline;
+}
+
+#username-label,
+#password-label{
+    display: block;
+    font-size: 1.2rem;
+    color: #fff;
+    padding: .5rem .2rem;
+}
+
+#username-input,
+#password-input{
+    display: block;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.315);
+    padding: .5rem .2rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background-color: transparent;
+    outline: none;
+    color: #fff;
+}
+
+#username-input::placeholder,
+#password-input::placeholder{
+    color: rgba(255, 255, 255, 0.418);
+}
+
+.hr{
+    margin: 1rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.521);
+}
+
+#save-button{
+    padding: .5rem;
+    text-align: center;
+    width: 100%;
+    margin: 1rem 0;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.315);
+    border-radius: 10px ;
+    font-size: 1.2rem;
+}
+
+#save-button:hover{
+    background-color: var(--color2);
+}
+
+/* ======================== header section ============================ */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: var(--color3);
+    color: #fff;
+    padding: .5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-logo{
+    font-size: 1.2rem;
+}
+
+.main-logo span{
+    color: var(--color2);
+    font-size: 1.4rem;
+}
+
+.header-right label{
+    display: inline-block;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ======================== MAIN section ============================ */
+#main-section{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    overflow: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+#main-section > section {
+    scroll-snap-align: start;
+}
+
+/* ======================== VIDEOS section ============================ */
+#videos-section{
+    height: 100vh;
+    width: 100vw;
+    padding: 3rem 0;
+    overflow: hidden auto;
+}
+
+.video-item{
+    width: 98%;
+    padding: 3px;
+    margin: .5rem auto;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.video-thumbnail{
+    width: 100%;
+}
+
+.video-details{
+    display: flex;
+}
+
+.video-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-image img{
+    border-radius: 50%;
+    width: 85%;
+}
+
+.video-content{
+    width: 100%;
+    padding: 3px;
+}
+
+.video-name{
+    font-weight: 900;
+}
+
+.video-creator-name{
+    font-size: .85rem;
+}
+
+/* ============================= about section ============================= */
+#about-section{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden auto;
+    padding: 2.7rem 0 4rem;
+}
+
+#about-header{
+    height: 6rem;
+    background: linear-gradient(93deg, var(--color2), var(--color5));
+    position: relative;
+    z-index: -1;
+}
+
+#about-username{
+    position: absolute;
+    bottom: .5rem;
+    left: .7rem;
+    font-size: 1.5rem;
+    color: white;
+    text-transform: capitalize;
+}
+
+/* about video looks section  */
+.about-heading{
+    font-size: 1.1rem;
+    font-weight: 900;
+    padding: .5rem 1rem;
+}
+
+/* about warning  */
+.about-warning{
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 1rem;
+    width: 100%;
+    color: var(--color2);
+    border: 1px solid rgb(209, 208, 208);
+    border-radius: 5px;
+}
+
+#liked-videos{
+    width: 97%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin: .5rem auto;
+    padding: .3rem 0;
+}
+
+.liked-item{
+    width: 30%;
+    margin: 0 .3rem;
+}
+
+.about-video-thumbnail{
+    width: 100%;
+}
+
+.about-video-details{
+    text-align: center;
+}
+
+.about-video-name{
+    font-size: .9rem;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 .3rem;
+}
+
+.about-video-creator-name{
+    width: 100%;
+    font-size: .8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 .3rem;
+}
+
+/*delete button  */
+#delete-accounts{
+    width: 95%;
+    margin: 1rem auto;
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--color2);
+    border: 1px solid var(--color2);
+    padding: .5rem 0;
+    border-radius: 5px;
+}
+
+/* delete account button  */
+#delete-accounts{
+    background-color: red;
+    color: #fff;
+}
+
+/* ================================= delete accouunt pop up =================================   */
+#delete-account-container{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 100vw;
+    top: 0;
+    z-index: 9;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#delete-account-message{
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 95%;
+    animation: POP_UP .35s ease-in-out;
+}
+
+/* pop up message animation  */
+@keyframes POP_UP{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: none;
+    }
+}
+
+.top{
+    padding: 3rem 1rem;
+    font-weight: 900;
+    font-size: 1.3rem;
+}
+
+.bottom{
+    display: flex;
+}
+
+.bottom > div{
+    width: 50%;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 1rem 0;
+    color: #fff;
+}
+
+#cancel-delete{
+    background-color: var(--color3);
+}
+
+#account-delete{
+    background-color: var(--color2);
+}
+
+/* ============================= search section ============================= */
+#search-container{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color1);
+    position: fixed;
+    top: 0;
+    left: 100vw;
+    z-index: 10;
+    display: none;
+    flex-direction: column;
+    transform-origin: right top;
+    animation: POP_UP .4s ease-in-out;
+}
+
+#search-header{
+    background-color: var(--color3);
+    display: flex;
+}
+
+#input-search{
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    padding: .7rem 1rem;
+    color: #fff;
+    width: 100%;
+}
+
+#input-search::placeholder{
+    color: rgba(255, 255, 255, 0.763);
+}
+
+#close-search{
+    width: 50px;
+    color: #fff;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ============================ searched item container ============================ */
+#searched-item-container{
+    height: 100%;
+    overflow: hidden auto;
+}
+
+.found-item{
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    display: flex;
+    margin: .5rem auto;
+    width: 96%;
+    padding: .2rem;
+    animation: SWIPE .5s ease-in-out;
+}
+
+@keyframes SWIPE{
+    0%{
+        transform: translateY(100vh);
+    }
+    100%{
+        transform: none;
+    }
+}
+
+.found-item-image{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.found-item-image img{
+    width: 90%;
+    border-radius: 5px;
+}
+
+.found-item-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    word-break: break-all;
+}
+
+.found-item-video-name{
+    font-weight: 900;
+    font-size: 1rem;
+}
+
+.found-item-video-creator{
+    font-size: .85rem;
+}
+
+/* ============================= video player section ============================= */
+
+#video-player-container{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 120vh;
+    left: 0;
+    z-index: 10;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    transition: top .4s ease-in-out;
+}
+
+#controls-up-container{
+    position: relative;
+}
+
+
+#controls-container{
+    position: relative;
+    color: #fff;
+}
+
+/* ============================ for fullscreen mode css ============================  */
+#controls-up-container:fullscreen > div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    width: 100vh;
+    height: 100vw;
+}
+
+#video-player{
+    max-width: 100%;
+}
+
+#controls-up-container:fullscreen > div #video-player{
+    height: 100vw;
+    width: auto;
+    display: block;
+    margin: auto;    
+}
+
+#close-video{
+    top: .7rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+#toggle-controls{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.301);
+    display: none;
+}
+
+.p-absolute{
+    position: absolute;
+    z-index: 1;
+}
+
+#prev{
+    top: 50%;
+    left: 25%;
+    transform: translate(-25%, -50%);
+    font-size: 2rem;
+    padding: .5rem;
+}
+
+#next{
+    top: 50%;
+    left: 75%;
+    transform: translate(-75%, -50%);
+    font-size: 2rem;
+    padding: .5rem;
+}
+
+#toggle-play{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    padding: .5rem;
+}
+
+#timer{
+    bottom: 1.5rem;
+    left: .5rem;
+    font-size: .8rem;
+}
+
+#fullscreen-toggle{
+    right: 1rem;
+    bottom: 1.5rem;
+    padding: 1rem;
+}
+
+#video-progress{
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* video details  */
+#video-details{
+    padding: .5rem;
+}
+
+/* videos option  */
+#videos-options{
+    display: flex;
+    justify-content: space-around;
+    padding: .5rem;
+    font-size: 1.5rem;
+}
+
+#videos-options a{
+    color: #000;
+    text-decoration: none;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.flex span{
+    font-size: .7rem;
+    line-height: 1.6;
+}
+
+/* channel name  */
+#about-channel{
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-width: 1px 0px;
+}
+
+#channel-img{
+    border-radius: 50%;
+    padding: .5rem;
+    margin: 0 .5rem;
+}
+
+#channel-name{
+    font-weight: 900;
+}
+
+/* up next  */
+.up-next{
+    padding: .5rem 1rem;
+}
+
+/*======================= suggestion to other videos ======================= */
+#suggestion-videos-container{
+    overflow: hidden auto;
+}
+
+.s-video-item{
+    width: 98%;
+    padding: 3px;
+    margin: auto;
+}
+
+.s-video-thumbnail{
+    width: 100%;
+}
+
+.s-video-details{
+    display: flex;
+}
+
+.s-video-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.s-video-image img{
+    border-radius: 50%;
+    width: 85%;
+}
+
+.s-video-content{
+    width: 100%;
+    padding: 3px;
+}
+
+/* ======================= navbar section =======================  */
+#navbar{
+    background-color: var(--color3);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    display: flex;
+}
+
+.nav-item{
+    color: #fff;
+    font-size: 1.2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .4rem 0;
+}
+
+.nav-item:active{
+    background-color: var(--color4);
+}
+
+.nav-item span{
+    font-size: .8rem;
+}
